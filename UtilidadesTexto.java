@@ -44,7 +44,6 @@ public class UtilidadesTexto {
 
         scanner.close();
     }
-    }
 
     public static void mostrarMenu() {
         System.out.println("\nOpciones");
@@ -54,12 +53,6 @@ public class UtilidadesTexto {
         System.out.println("4. Desencriptar texto");
         System.out.println("5. Salir");
         System.out.print("Selecciona una opción: ");
-    }
-
-    public static String ingresarString() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa texto: ");
-        return scanner.nextLine();
     }
 
     public static void verificarRevesDerecho() {
@@ -79,7 +72,7 @@ public class UtilidadesTexto {
         System.out.println("Contaremos las vocales de una frase.");
         String frase = ingresarString();
         int contador = 0;
-        String vocales = "aeiouáéíóú"; // Incluye vocales acentuadas
+        String vocales = "aeiouáéíóú";
 
         for (char caracter : frase.toLowerCase().toCharArray()) {
             if (vocales.indexOf(caracter) != -1) {
@@ -102,5 +95,11 @@ public class UtilidadesTexto {
         String texto = ingresarString();
         texto = texto.replace("@", "a").replace("&", "e").replace("->&", "i").replace("->*", "o").replace("->#", "u");
         System.out.println("Texto desencriptado: " + texto);
+    }
+
+    public static String ingresarString() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingresa texto: ");
+        return scanner.nextLine();
     }
 }
