@@ -37,31 +37,47 @@ public class UtilidadesTexto
 
     public static void mostrarMenu() {
         System.out.println("\n--- Menú de Opciones ---");
-        System.out.println("1. Opción 1");
-        System.out.println("2. Opción 2");
-        System.out.println("3. Opción 3");
-        System.out.println("4. Opción 4");
+        System.out.println("1. Verificar si una palabra o frase se lee igual tanto al revés como al derecho (Palíndromo)");
+        System.out.println("2. Contar vocales de una frase");
+        System.out.println("3. Encriptar texto");
+        System.out.println("4. Desencriptar texto");
         System.out.println("5. Salir");
         System.out.print("Selecciona una opción: ");
     }
 
-    public static void verificarRevesDerecho() {
-        System.out.println("Ejecutando el Método 1...");
-        sadfsdf
+    public static boolean verificarRevesDerecho(String frase) {
+        System.out.println("Verificaremos si una palabra o frase se lee de la misma forma al revés y al derecho, ingresa la palabra ");
+        String palabraFrase = ingresarString();
+        palindromo = palabraFrase.replaceAll("\\s+", "").toLowerCase().StringBuilder.reverse();
+        if (palindromo == palabraFrase)
+            return true;
+        else
+            return false;
     }
 
-    public static void contarVocales() {
+    public static int contarVocales() {
         System.out.println("Ejecutando el Método 2...");
-        asdfd
+        String palabraVocales = ingresarString();
+        ...
     }
 
-    public static void encriptarTexto() {
+    public static String encriptarTexto() {
         System.out.println("Ejecutando el Método 3...");
-        asdf
+        String textoEncriptar = ingresarString();
+        ...
     }
 
-    public static void desencriptarTexto() {
+    public static String desencriptarTexto() {
         System.out.println("Ejecutando el Método 4...");
-        gf
+        String textoDesencriptar = ingresarString();
+        ...
+        return te
+    }
+
+    public static String ingresarString() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingresa la palabra o frase: ");
+        String entradaUsuario = scanner.nextLine();
+        return entradaUsuario;
     }
 }
