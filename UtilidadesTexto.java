@@ -48,35 +48,46 @@ public class UtilidadesTexto
     public static boolean verificarRevesDerecho(String frase) {
         System.out.println("Verificaremos si una palabra o frase se lee de la misma forma al revés y al derecho, ingresa la palabra ");
         String palabraFrase = ingresarString();
-        palindromo = palabraFrase.replaceAll("\\s+", "").toLowerCase().StringBuilder.reverse();
-        if (palindromo == palabraFrase)
+        palindromo = palabraFrase.replaceAll("\\s+", "")
+        palindromoMinuscula = palindromo.toLowerCase()
+        palindromoInvertido = .palindromoMinuscula.reverse();
+        if (palindromoInvertido == palabraFrase)
             return true;
         else
             return false;
     }
 
-    public static int contarVocales() {
-        System.out.println("Ejecutando el Método 2...");
-        String palabraVocales = ingresarString();
-        ...
+    public static void contarVocales() {
+        System.out.println("Contaremos las vocales de una frase.");
+        String frase = ingresarString();
+        int contador = 0;
+        String vocales = "aeiou";
+
+        for (char caracter : frase.toLowerCase().toCharArray()) {
+            if (vocales.indexOf(caracter) != -1) {
+                contador++;
+            }
+        }
+        System.out.println("La frase contiene " + contador + " vocales.");
     }
 
     public static String encriptarTexto() {
-        System.out.println("Ejecutando el Método 3...");
-        String textoEncriptar = ingresarString();
-        ...
+        System.out.println("Vamos a encriptar texto (las vocales se reemplazarán por símbolos especiales)");
+        String texto = ingresarString();
+        texto = texto.replace("@", "a").replace("&", "e").replace("->&", "i").replace("->*", "o").replace("->#", "u");
+        System.out.println("Texto desencriptado: " + texto);
     }
 
     public static String desencriptarTexto() {
-        System.out.println("Ejecutando el Método 4...");
+        System.out.println("Vamos a desencriptar texto (inverso de la opción 3)");
         String textoDesencriptar = ingresarString();
-        ...
-        return te
+        texto = texto.replace("@", "a").replace("&", "e").replace("->&", "i").replace("->*", "o").replace("->#", "u");
+        System.out.println("Texto desencriptado: " + texto);
     }
 
     public static String ingresarString() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa la palabra o frase: ");
+        System.out.print("Ingresa texto: ");
         String entradaUsuario = scanner.nextLine();
         return entradaUsuario;
     }
